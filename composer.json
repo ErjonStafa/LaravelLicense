@@ -1,0 +1,30 @@
+{
+    "name": "erjon/laravel_license",
+    "description": "Package to give a project an license and prevent installation if client doesn't have it",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erjon Stafa",
+            "email": "erjonstafa647@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Erjon\\LaravelLicense\\": "src"
+        },
+        "files": [
+            "src/helpers/helpers.php"
+        ]
+    },
+    "require": {
+        "laravel/framework": "^8.0|^9.0|^10.0"
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Erjon\\LaravelLicense\\ErjonServiceProvider"
+            ]
+        }
+    }
+}
