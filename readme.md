@@ -40,3 +40,4 @@ php artisan license:activate ABCD-EFGH-IJKL
 - If you activate the license before connecting to the database, you will be required to provide the license one more time.
 - License should be 8 to 30 characters long.
 - Someone with enough knowledge of php/laravel or just programming in general can easily copy the existing project.
+- License characters allowed are ascii characters from 33 to 122. https://www.ascii-code.com
