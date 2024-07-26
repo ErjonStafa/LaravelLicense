@@ -100,7 +100,13 @@ class LicenseChecker extends Output
     private function decryptAndCheck(string $license): bool
     {
         try {
-            exec('cd '. __DIR__ .' && cd ../ && ./LicenseManager decryptDatabaseLicense ' . escapeshellarg($license), $output);
+
+            if(get_os() == 'Linux') {
+                exec('cd '. __DIR__ .' && cd ../ && ./LicenseManager decryptDatabaseLicense ' . escapeshellarg($license), $output);
+            } else {
+                exec('cd '. __DIR__ .' && cd ../ && LicenseManager decryptDatabaseLicense ' . escapeshellarg($license), $output);
+            }
+
             $decryptedLicense = preg_replace('/Decrypted: /', '', $output[0]);
 
             if(get_os() == 'Linux') {
